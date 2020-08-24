@@ -10,3 +10,14 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${type}-version`, process.versions[type])
   }
 })
+
+window.addEventListener('mousemove', function ( event ) {
+  let el = event.target
+  if (el.classList.contains('mouse') || el.classList.contains('window-handle')) {
+    browserWindow.setIgnoreMouseEvents(false)
+  } else {
+    browserWindow.setIgnoreMouseEvents(true, {forward: true})
+    // ^ this function stops forwarding after a refresh (CTRL+R)
+  }
+  console.log("here")
+})
