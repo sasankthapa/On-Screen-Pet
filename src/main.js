@@ -8,7 +8,8 @@ function createWindow (width,height) {
     width,
     height,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+        sandbox:true,
+        preload: path.join(__dirname, 'preload.js')
     },
     frame:false,
     transparent:true,
