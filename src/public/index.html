@@ -6,19 +6,18 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="Character-Controller">
-        <div class="Character">
-            <img class="Character_spritesheet pixelart face-left window-handle" src="../assets/petSprite.png" alt="Pet">
-        </div>  
+    <div id="wrapper">
+        <div class="Character-Controller window-handle" draggable="true">
+            <div class="Character">
+                <img class="Character_spritesheet pixelart face-left window-handle" src="../assets/petSprite.png" alt="Pet" draggable="false" >
+            </div>  
+        </div>
     </div>
-    
     <!-- You can also require other files to run in this process -->
     <script src="./script.js"></script>
     <script src="./renderer.js"></script>
-    <script sr
   </body>
 </html>

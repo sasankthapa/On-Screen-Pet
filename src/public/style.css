@@ -1,13 +1,13 @@
-.box{
-    height: 200px;
-    width: 200px;
-    background-color: red;
+body{
+    height:100vh;
+    width:100vw;
+    background-color:rgba(255,0,0,0.5)
 }
 
-.box:hover{
-    background-color: blue;
+#wrapper{
+    width:100%;
+    height:100%;
 }
-
 :root {
     --pixel-size: 6;
     --frames:4;
@@ -16,22 +16,21 @@
 }
 
 .Character-Controller{
-    position: absolute;
-    top:100px; 
-    left:100px;
+    position: fixed;
+    top:400px; 
+    left:500px;
+    transition:top 0.5s ease, left 0.5s ease;
 }
 
 .Character {
    width: calc(var(--sprite-size) * var(--pixel-size));
    height: calc(var(--sprite-size) * var(--pixel-size));
    overflow: hidden;
-   position: relative;
 }
 
 .Character_spritesheet {
    animation: moveSpritesheet 1s steps(var(--frames)) infinite;
    width: calc(var(--spritesheet-size) * var(--pixel-size));
-   position: absolute;
 }
 
 .face-down {
