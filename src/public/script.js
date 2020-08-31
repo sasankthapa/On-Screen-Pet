@@ -4,32 +4,31 @@ class Pet{
     }
 
     moveTo(top,left){
-        console.log('diddiddidi')
+        console.log('diddiddidi',top,left)
         this.character.style.top=top
         this.character.style.left=left
     }
 }
+const wrapper=document.getElementById("wrapper")
 
 const charPet=new Pet('.Character-Controller')
 
 charPet.character.addEventListener('click',(e)=>{
-        top=Math.floor((Math.random() * window.innerHeight)) 
-        left=Math.floor((Math.random() * window.innerWidth)) 
-        console.log("donut");
-        const wrapper=document.getElementById("wrapper")
+        let top=Math.floor((Math.random() * window.innerHeight)) 
+        let left=Math.floor((Math.random() * window.innerWidth)) 
         wrapper.classList.add('window-handle')
-        console.log(wrapper.classList)
         charPet.moveTo(`${top}px`,`${left}px`)
-        /*wrapper.addEventListener('click',(e)=>{
-            console.log('here')
-            top=e.clientY
-            left=e.clientX
-            charPet.moveTo(top,left)
-            wrapper.classList.remove('window-handle')
-            wrapper.removeEventListener('click',this)
-        })*/
     }
 )
+
+wrapper.addEventListener('click',(e)=>{
+    topt=e.clientY;
+    left=e.clientX;
+    console.log(e)
+    charPet.moveTo(`${topt}px`,`${left}px`)
+    wrapper.classList.remove('window-handle')
+    //wrapper.removeEventListener('click',this)
+})
 /*
 const character=document.querySelector('.Character-Controller')
 
