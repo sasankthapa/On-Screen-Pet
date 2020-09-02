@@ -4,7 +4,7 @@
   "description": "On Sreen Pet",
   "main": "./src/main.js",
   "scripts": {
-    "star": "electron .",
+    "start": "electron .",
     "dev": "nodemon -e * --watch . --exec \"electron .\""
   },
   "repository": "https://github.com/electron/electron-quick-start",

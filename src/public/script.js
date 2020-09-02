@@ -3,33 +3,36 @@ class Pet{
         this.character=document.querySelector(controllerClass)
     }
 
-    moveTo(top,left){
-        console.log('diddiddidi')
-        this.character.style.top=top
-        this.character.style.left=left
-    }
+    moveTo(topE,leftE){
+        var {width,height}=window.getComputedStyle(this.character)
+        width=parseInt(width)
+        height=parseInt(height)
+        this.character.style.top=`${topE-height/2}px`
+        this.character.style.left=`${leftE-width/2}px`
+   }
 }
+
+const wrapper=document.getElementById("wrapper")
 
 const charPet=new Pet('.Character-Controller')
 
 charPet.character.addEventListener('click',(e)=>{
-        top=Math.floor((Math.random() * window.innerHeight)) 
-        left=Math.floor((Math.random() * window.innerWidth)) 
-        console.log("donut");
-        const wrapper=document.getElementById("wrapper")
         wrapper.classList.add('window-handle')
-        console.log(wrapper.classList)
-        charPet.moveTo(`${top}px`,`${left}px`)
-        /*wrapper.addEventListener('click',(e)=>{
-            console.log('here')
-            top=e.clientY
-            left=e.clientX
-            charPet.moveTo(top,left)
-            wrapper.classList.remove('window-handle')
-            wrapper.removeEventListener('click',this)
-        })*/
+        //wrapper.style.cursor = "url('../assets/target.png'),auto"
+        wrapper.style.cursor = "pointer"
+        wrapper.style.zIndex = "99"
     }
 )
+
+wrapper.addEventListener('click',(e)=>{
+    topt=e.clientY;
+    left=e.clientX;
+    charPet.moveTo(topt,left)
+    wrapper.classList.remove('window-handle')
+    wrapper.style.cursor =''
+    wrapper.style.zIndex = "1"
+    //wrapper.removeEventListener('click',this)
+})
 /*
 const character=document.querySelector('.Character-Controller')
 

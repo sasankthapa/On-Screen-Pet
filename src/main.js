@@ -1,6 +1,11 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow,screen} = require('electron')
+const {app, BrowserWindow, screen, session} = require('electron')
 const path = require('path')
+
+async function clearData(){
+    await session.defaultSession.clearStorageData();
+
+}
 
 function createWindow (width,height) {
   // Create the browser window.
@@ -16,7 +21,9 @@ function createWindow (width,height) {
     alwaysOnTop:true,
     fullscreen:false
   })
-
+  clearData().then(()=>{
+    console.log("clearData");
+  })
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, '/public/index.html'))
 
