@@ -34,17 +34,6 @@ wrapper.addEventListener('click',(e)=>{
     //wrapper.removeEventListener('click',this)
 })
 /*
-const character=document.querySelector('.Character-Controller')
-
-character.style.top='100px'
-character.style.left='100px'
-character.addEventListener('click',()=>{
-    //open menu
-    console.log("herere")
-})
-
-let move=100
-
 window.addEventListener('keydown',(event)=>{
     console.log(event.key)
     const {style} = character
